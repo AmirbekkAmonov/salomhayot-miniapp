@@ -1,0 +1,29 @@
+header {
+    background-color: var(--background-color);
+    border-top: 1px solid var(--border-color);
+
+
+    .header__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+
+        .header__btn {
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+            color: var(--primary-color);
+            font-size: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            
+            .header__btn-icon {
+                font-size: 18px;
+            }
+        }
+    }
+}
