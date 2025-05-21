@@ -11,26 +11,24 @@ function App() {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    WebApp.ready(); // Telegram'ga tayyorligini bildiradi
-    document.documentElement.setAttribute("data-theme", WebApp.colorScheme);
-    // 500ms kechikish bilan loading yo‘qoladi
-    setTimeout(() => setIsReady(true), 500); 
-  }, []);
-
-  useEffect(() => {
+    // Telegram Mini App SDK tayyor bo‘lishi
     WebApp.ready();
 
-    // Telegram ilovasining hozirgi mavzusini oling
-    const theme = WebApp.colorScheme; // 'light' yoki 'dark'
-
-    // HTML tagga data-theme atributini o'rnating
+    // Mavzuni o‘rnatish (light/dark)
+    const theme = WebApp.colorScheme;
     document.documentElement.setAttribute("data-theme", theme);
+
+    // 500ms loading effekti
+    const timer = setTimeout(() => setIsReady(true), 500);
+
+    // Tozalash (memory leak oldini olish)
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
-      {isReady ? <AppRouter /> : <Loader />}
+        {isReady ? <AppRouter /> : <Loader />}
       </QueryClientProvider>
     </BrowserRouter>
   );
