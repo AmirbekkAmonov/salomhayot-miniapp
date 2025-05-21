@@ -1,17 +1,17 @@
-import { useEffect } from 'react';
-import WebApp from '@twa-dev/sdk';
+import { BrowserRouter } from "react-router-dom"
+import AppRouter from "./router"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+
+const queryClient = new QueryClient()
 
 function App() {
-  useEffect(() => {
-    WebApp.ready();
-  }, []);
-
   return (
-    <div>
-      <h1>Telegram Mini App</h1>
-      <p>Welcome, {WebApp.initDataUnsafe.user?.first_name}</p>
-    </div>
-  );
+    <BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <AppRouter />
+      </QueryClientProvider>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
