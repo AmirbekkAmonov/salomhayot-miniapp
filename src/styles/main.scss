@@ -1,9 +1,16 @@
 @import './abstracts/variables';
 @import './base/base';
+
+// Components   // layout
 @import './components/layout/header';
 @import './components/layout/footer';
 @import './components/layout/sidebar';
 @import './components/layout/layout';
+
+// Components   // ui
+@import './components/ui/loader';
+
+// Pages
 @import './pages/home';
 @import './pages/catalog';
 @import './pages/favorites';
