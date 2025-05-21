@@ -1,0 +1,43 @@
+.sidebar {
+    width: 100%;
+    padding: 10px 0;
+
+    .sidebar__container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+
+        .sidebar__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: var(--secondary-color);
+            cursor: pointer;
+        }
+
+        .sidebar__logo {
+            padding: 8px 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            color: var(--color-primary);
+            border-radius: 10px;
+            background-color: var(--secondary-color);
+
+            .sidebar__logo-img {
+                width: 17px;
+                height: 17px;
+            }
+
+            .sidebar__logo-brand {
+                width: 110px;
+                height: 10px;
+            }
+        }
+    }
+}
