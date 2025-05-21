@@ -26,9 +26,9 @@ function Sidebar() {
           <FaBars color="var(--primary-color)" />
         </div>
         <Link to="/" className="sidebar__logo">
-          <img src={isDark ? logoLight : logoDark} alt="logo" className="sidebar__logo-img" />
+          <img src={isDark ? logoDark : logoLight} alt="logo" className="sidebar__logo-img" />
           <img
-            src={isDark ? brandLight : brandDark}
+            src={isDark ? brandDark : brandLight}
             alt="brand"
             className="sidebar__logo-brand"
           />
