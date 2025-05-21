@@ -4,6 +4,9 @@
     --secondary-color: #fff;
     --tertiary-color: #000;
     --border-color: #848484;
+    --hover-color: #00000008;
+    --active-color: #00000023;
+
 }
 
 :root[data-theme="dark"] {
@@ -12,5 +15,7 @@
     --secondary-color: #000;
     --tertiary-color: #fff;
     --border-color: #e5e7eb;
+    --active-color: #ffffff23;
+    --hover-color: #ffffff08;
 }
 
