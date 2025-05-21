@@ -1,8 +1,8 @@
-@use './abstracts/variables' as *;
-@use './base/base' as *;
-@use './components/layout/Header' as *;
-@use './components/layout/Footer' as *;
-@use './components/layout/Sidebar' as *;
-@use './pages/Home' as *;
-@use './pages/Catalog' as *;
-@use './pages/Favorites' as *;
+@import './abstracts/variables';
+@import './base/base';
+@import './components/layout/header';
+@import './components/layout/footer';
+@import './components/layout/sidebar';
+@import './pages/home';
+@import './pages/catalog';
+@import './pages/favorites';
