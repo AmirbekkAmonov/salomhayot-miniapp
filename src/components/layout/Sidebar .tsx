@@ -1,8 +1,8 @@
 import { FaBars } from "react-icons/fa"
-import logoLight from "../../assets/images/logo.png"
-import logoDark from "../../assets/images/logo.svg"
-import brandLight from "../../assets/images/brand.png"
-import brandDark from "../../assets/images/brand.svg"
+import logoLight from "../../assets/images/logolight.svg"
+import logoDark from "../../assets/images/logodark.svg"
+import brandLight from "../../assets/images/brandlight.svg"
+import brandDark from "../../assets/images/branddark.svg"
 
 import { Link } from "react-router-dom"
 import { useEffect, useRef, useState } from "react"
