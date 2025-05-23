@@ -35,9 +35,17 @@ button {
     cursor: pointer;
 }
 
-input, select {
+input,
+select {
     border: none;
     outline: none;
+}
+
+button,
+a,
+input,
+label {
+    -webkit-tap-highlight-color: transparent;
 }
 
 ::-webkit-scrollbar {
@@ -51,6 +59,3 @@ input, select {
 ::-webkit-scrollbar-thumb {
     background-color: var(--primary-color);
 }
-
-
-

@@ -10,6 +10,10 @@
 // Components   // ui
 @import './components/ui/loader';
 
+// Components   // common
+@import './components/common/productCard';
+@import './components/common/categoryCard';
+
 // Pages
 @import './pages/home';
 @import './pages/catalog';

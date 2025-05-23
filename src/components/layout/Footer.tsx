@@ -1,7 +1,7 @@
 
 function Footer() {
   return (
-    <div>Footer</div>
+    <div style={{height: "300px"}}>Footer</div>
   )
 }
 

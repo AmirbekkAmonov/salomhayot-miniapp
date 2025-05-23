@@ -1,4 +1,4 @@
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaSearch } from "react-icons/fa";
 import logoLight from "../../assets/images/logolight.svg";
 import logoDark from "../../assets/images/logodark.svg";
 import brandLight from "../../assets/images/brandlight.svg";
@@ -54,21 +54,29 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="container sidebar__container">
-        <div className="sidebar__icon" onClick={() => setOpen((v) => !v)}>
-          <FaBars color="var(--primary-color)" />
+        <div className="sidebar__header">
+          <div className="sidebar__icon" onClick={() => setOpen((v) => !v)}>
+            <FaBars color="var(--primary-color)" />
+          </div>
+          <Link to="/" className="sidebar__logo">
+            <img
+              src={isDark ? logoDark : logoLight}
+              alt="logo"
+              className="sidebar__logo-img"
+            />
+            <img
+              src={isDark ? brandDark : brandLight}
+              alt="brand"
+              className="sidebar__logo-brand"
+            />
+          </Link>
         </div>
-        <Link to="/" className="sidebar__logo">
-          <img
-            src={isDark ? logoDark : logoLight}
-            alt="logo"
-            className="sidebar__logo-img"
-          />
-          <img
-            src={isDark ? brandDark : brandLight}
-            alt="brand"
-            className="sidebar__logo-brand"
-          />
-        </Link>
+        <div className="sidebar__input">
+          <input type="text" placeholder="Mahsulotlarni qidirish" />
+          <div className="sidebar__input-icon">
+            <FaSearch color="var(--primary-color)" />
+          </div>
+        </div>
 
         <div className={`sidebar__dropdown${open ? " open" : ""}`}>
           <div className="sidebar__dropdown-content">
@@ -98,15 +106,15 @@ function Sidebar() {
                       style={
                         isOpen && accRefs.current[idx]
                           ? {
-                              maxHeight: accRefs.current[idx]?.scrollHeight + "px",
-                              opacity: 1,
-                              transition: "max-height 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s",
-                            }
+                            maxHeight: accRefs.current[idx]?.scrollHeight + "px",
+                            opacity: 1,
+                            transition: "max-height 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s",
+                          }
                           : {
-                              maxHeight: 0,
-                              opacity: 0,
-                              transition: "max-height 0.25s cubic-bezier(.4,0,.2,1), opacity 0.18s",
-                            }
+                            maxHeight: 0,
+                            opacity: 0,
+                            transition: "max-height 0.25s cubic-bezier(.4,0,.2,1), opacity 0.18s",
+                          }
                       }
                     >
                       <ul style={{ margin: 0, padding: 0 }}>

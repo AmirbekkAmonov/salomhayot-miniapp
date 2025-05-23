@@ -12,6 +12,7 @@
   "dependencies": {
     "@tanstack/react-query": "^5.76.1",
     "@twa-dev/sdk": "^8.0.2",
+    "antd": "^5.25.2",
     "framer-motion": "^12.12.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
