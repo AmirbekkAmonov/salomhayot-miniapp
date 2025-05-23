@@ -3,15 +3,15 @@ import { MdShoppingCart, MdOutlineShoppingCart } from 'react-icons/md';
 import noImageLight from '../../assets/images/logolight.svg';
 import noImageDark from '../../assets/images/logodark.svg';
 import { useThemeStore } from '../../hooks/ThemeContext';
-
+import { Link } from 'react-router-dom';
 function formatPrice(price: string) {
-  const regex = /(\d+)(.*)/; 
+  const regex = /(\d+)(.*)/;
   const match = price.match(regex);
 
   if (!match) return price;
 
-  const numberPart = match[1];  
-  const textPart = match[2]; 
+  const numberPart = match[1];
+  const textPart = match[2];
 
   const formattedNumber = Number(numberPart).toLocaleString('ru-RU');
 
@@ -37,7 +37,9 @@ function ProductCard({
   return (
     <div className="product-card">
       {imageExists ? (
-        <img src={product.image} alt={product.name} className="product-card__image" />
+        <Link to={`/product/${product.id}`}>
+          <img src={product.image} alt={product.name} className="product-card__image" />
+        </Link>
       ) : (
         <div className="product-card__image-placeholder">
           <img src={isDark ? noImageDark : noImageLight} alt={product.name} className="product-card__image" />
@@ -50,14 +52,16 @@ function ProductCard({
         <HeartOutlined className="product-card__like" onClick={onLike} />
       )}
       <div className="product-card__info">
-        <div className="product-card__category">{product.category}</div>
-        <h3 className="product-card__name">{product.name}</h3>
+        <Link to={`/product/${product.id}`}>
+          <div className="product-card__category">{product.category}</div>
+          <h3 className="product-card__name">{product.name}</h3>
+        </Link>
         <div className="product-card__price">
-          <span className="product-card__price-new">{formatPrice(product.monthprice)}</span>
+          <Link to={`/product/${product.id}`} className="product-card__price-new">{formatPrice(product.monthprice)}</Link>
           <div className="product-card__price-old">
             <span className="product-card__price-old-price">{formatPrice(product.oldprice)}</span>
             {isAddedToCart ? (
-              <MdShoppingCart 
+              <MdShoppingCart
                 className="product-card__price-old-icon"
                 style={{ color: "green", cursor: "pointer" }}
                 onClick={onAddToCart}

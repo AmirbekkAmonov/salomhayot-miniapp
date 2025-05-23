@@ -32,7 +32,39 @@ function Home() {
     { id: 1, category: 'Smartfonlar', name: 'Apple iPhone 16 Plus Pink 128GB', image: false, monthprice: "989 963 so'm oyiga ", oldprice: "11 704 000 so'm " },
     { id: 2, category: 'Iphone', name: 'Iphone', image: Gadgets, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
     { id: 3, category: 'Audiotexnika va Wi-Fi', name: 'Audiotexnika va Wi-Fi', image: Texnika, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
+    { id: 4, category: 'Smartfonlar', name: 'Apple iPhone 16 Plus Pink 128GB', image: false, monthprice: "989 963 so'm oyiga ", oldprice: "11 704 000 so'm " },
+    { id: 5, category: 'Smartfonlar', name: 'Apple iPhone 16 Plus Pink 128GB', image: true, monthprice: "989 963 so'm oyiga ", oldprice: "11 704 000 so'm " },
+    { id: 6, category: 'Changyutkich', name: 'Changyutkich', image: false, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
+    { id: 7, category: 'Kiyimlar', name: 'Kiyimlar', image: false, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
+    { id: 8, category: 'Kiyimlar', name: 'Kiyimlar', image: false, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
+    { id: 9, category: 'Kir yuvish mashinasi', name: 'Kir yuvish mashinasi', image: false, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
+    { id: 10, category: 'Kiyimlar', name: 'Kiyimlar', image: false, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
   ];
+  const smartphones = [
+    { id: 1, category: 'Smartfonlar', name: 'Apple Watch Series 8', image: false, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
+    { id: 2, category: 'Smartfonlar', name: 'Realme 10 Pro', image: true, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
+    { id: 3, category: 'Smartfonlar', name: 'Apple Watch Series 8', image: false, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
+    { id: 4, category: 'Smartfonlar', name: 'Honor 90', image: true, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
+    { id: 5, category: 'Smartfonlar', name: 'Samsung', image: false, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
+    { id: 6, category: 'Smartfonlar', name: 'Redmi 10', image: false, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
+    { id: 7, category: 'Smartfonlar', name: 'Samsung', image: false, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
+    { id: 8, category: 'Smartfonlar', name: 'Realme 10', image: false, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
+    { id: 9, category: 'Smartfonlar', name: 'Samsung', image: false, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
+    { id: 10, category: 'Smartfonlar', name: 'Poco X5 Pro', image: false, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
+  ];
+  const homeAppliances = [
+    { id: 1, category: 'Home Appliances', name: 'Samsung Refrigerator', image: false, monthprice: "1 200 000 so'm oyiga", oldprice: "18 000 000 so'm" },
+    { id: 2, category: 'Home Appliances', name: 'LG Washing Machine', image: false, monthprice: "900 000 so'm oyiga", oldprice: "13 500 000 so'm" },
+    { id: 3, category: 'Home Appliances', name: 'Philips Microwave Oven', image: false, monthprice: "400 000 so'm oyiga", oldprice: "6 000 000 so'm" },
+    { id: 4, category: 'Home Appliances', name: 'Bosch Dishwasher', image: false, monthprice: "1 500 000 so'm oyiga", oldprice: "22 500 000 so'm" },
+    { id: 5, category: 'Home Appliances', name: 'Samsung Air Conditioner', image: false, monthprice: "1 800 000 so'm oyiga", oldprice: "27 000 000 so'm" },
+    { id: 6, category: 'Home Appliances', name: 'Xiaomi Robot Vacuum', image: false, monthprice: "600 000 so'm oyiga", oldprice: "9 000 000 so'm" },
+    { id: 7, category: 'Home Appliances', name: 'Delonghi Coffee Maker', image: false, monthprice: "350 000 so'm oyiga", oldprice: "5 250 000 so'm" },
+    { id: 8, category: 'Home Appliances', name: 'Tefal Electric Kettle', image: false, monthprice: "150 000 so'm oyiga", oldprice: "2 250 000 so'm" },
+    { id: 9, category: 'Home Appliances', name: 'Samsung Dryer', image: false, monthprice: "1 000 000 so'm oyiga", oldprice: "15 000 000 so'm" },
+    { id: 10, category: 'Home Appliances', name: 'LG Vacuum Cleaner', image: false, monthprice: "500 000 so'm oyiga", oldprice: "7 500 000 so'm" },
+  ];
+  
   return (
     <section className="home">
       <div className="container home__container">
@@ -66,10 +98,35 @@ function Home() {
             <Link to="/products" className="home__products-link">Barchasini ko'rish <RightOutlined /></Link>
           </div>
           <div className="home__products-cards">
-            {products.map((product) => (
+            {products.slice(0, 10).map((product) => (
               <ProductCard key={product.id} product={product} isLiked={isLiked(product.id)} isAddedToCart={isInCart(product.id)} onLike={() => toggleLike(product.id)} onAddToCart={() => toggleCartItem(product.id)} />
             ))}
           </div>
+          <button className="home__products-button">Barchasini ko'rish</button>
+        </div>
+        <div className="home__products">
+          <div className="home__products-title">
+            <Link to="/products" className="home__title">Smartfonlar <RightOutlined /></Link>
+            <Link to="/products" className="home__products-link">Barchasini ko'rish <RightOutlined /></Link>
+          </div>
+          <div className="home__products-cards">
+            {smartphones.slice(0, 10).map((product) => (
+              <ProductCard key={product.id} product={product} isLiked={isLiked(product.id)} isAddedToCart={isInCart(product.id)} onLike={() => toggleLike(product.id)} onAddToCart={() => toggleCartItem(product.id)} />
+            ))}
+          </div>
+          <button className="home__products-button">Barchasini ko'rish</button>
+        </div>
+        <div className="home__products">
+          <div className="home__products-title">
+            <Link to="/products" className="home__title">Uy texnikalari<RightOutlined /></Link>
+            <Link to="/products" className="home__products-link">Barchasini ko'rish <RightOutlined /></Link>
+          </div>
+          <div className="home__products-cards">
+            {homeAppliances.slice(0, 10).map((product) => (
+              <ProductCard key={product.id} product={product} isLiked={isLiked(product.id)} isAddedToCart={isInCart(product.id)} onLike={() => toggleLike(product.id)} onAddToCart={() => toggleCartItem(product.id)} />
+            ))}
+          </div>
+          <button className="home__products-button">Barchasini ko'rish</button>
         </div>
       </div>
     </section>
