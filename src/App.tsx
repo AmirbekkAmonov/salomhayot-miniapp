@@ -9,13 +9,13 @@ const queryClient = new QueryClient();
 
 function App() {
   const [isReady, setIsReady] = useState(false);
-  const detectTheme = useThemeStore((state) => state.detectTheme);
+  const initTheme = useThemeStore((state) => state.init);
 
   useEffect(() => {
-    detectTheme();
+    initTheme();
     const timer = setTimeout(() => setIsReady(true), 500);
     return () => clearTimeout(timer);
-  }, [detectTheme]);
+  }, [initTheme]);
 
   return (
     <BrowserRouter>
