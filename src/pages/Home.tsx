@@ -1,5 +1,6 @@
 import { Carousel } from 'antd';
 import 'antd/dist/reset.css';
+import { RightOutlined } from '@ant-design/icons';
 import banner1 from '../assets/images/carousel1.jpg';
 import banner2 from '../assets/images/carousel2.jpg';
 import banner3 from '../assets/images/carousel3.jpg';
@@ -9,8 +10,12 @@ import Tv from '../assets/images/tv.jpg';
 import Gadgets from '../assets/images/gadgets.jpg';
 import Texnika from '../assets/images/texnika.jpg';
 import ProductCard from '../components/common/ProductCard';
+import { Link } from 'react-router-dom';
+import { useProductStore } from '../hooks/useProductHooks';
 
 function Home() {
+  const { toggleLike, isLiked } = useProductStore();
+  const { toggleCartItem, isInCart } = useProductStore();
   const categories = [
     { id: 1, name: 'Televizorlar', image: Tv },
     { id: 2, name: 'Iphone', image: Gadgets },
@@ -24,9 +29,9 @@ function Home() {
     { id: 10, name: 'Avtomobil', image: Gadgets },
   ];
   const products = [
-    { id: 1, name: 'Televizorlar', image: Tv },
-    { id: 2, name: 'Iphone', image: Gadgets },
-    { id: 3, name: 'Audiotexnika va Wi-Fi', image: Texnika },
+    { id: 1, category: 'Smartfonlar', name: 'Apple iPhone 16 Plus Pink 128GB', image: false, monthprice: "989 963 so'm oyiga ", oldprice: "11 704 000 so'm " },
+    { id: 2, category: 'Iphone', name: 'Iphone', image: Gadgets, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
+    { id: 3, category: 'Audiotexnika va Wi-Fi', name: 'Audiotexnika va Wi-Fi', image: Texnika, monthprice: "1000000 so'm oyiga", oldprice: "1500000 so'm" },
   ];
   return (
     <section className="home">
@@ -56,10 +61,13 @@ function Home() {
           </div>
         </div>
         <div className="home__products">
-          <h1 className="home__title">Maxsulotlar</h1>
+          <div className="home__products-title">
+            <Link to="/products" className="home__title">Iphone <RightOutlined /></Link>
+            <Link to="/products" className="home__products-link">Barchasini ko'rish <RightOutlined /></Link>
+          </div>
           <div className="home__products-cards">
             {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} isLiked={isLiked(product.id)} isAddedToCart={isInCart(product.id)} onLike={() => toggleLike(product.id)} onAddToCart={() => toggleCartItem(product.id)} />
             ))}
           </div>
         </div>

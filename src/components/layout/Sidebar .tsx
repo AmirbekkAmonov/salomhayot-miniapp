@@ -6,7 +6,7 @@ import brandDark from "../../assets/images/branddark.svg";
 
 import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
-import { useTheme } from "../../hooks/ThemeContext";
+import { useThemeStore } from "../../hooks/ThemeContext";
 
 const categories = [
   {
@@ -44,7 +44,7 @@ const categories = [
 ];
 
 function Sidebar() {
-  const { theme } = useTheme();
+  const { theme } = useThemeStore();
   const isDark = theme === "dark";
 
   const [open, setOpen] = useState(false);
