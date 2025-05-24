@@ -1,0 +1,23 @@
+.catalog {
+    min-height: 100vh;
+    padding:10px 0 20px 0;
+
+    .catalog__container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-color) ;
+            margin: 0;
+        }
+
+        .catalog__categories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+    }
+}

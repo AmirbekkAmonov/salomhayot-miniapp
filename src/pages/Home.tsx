@@ -6,31 +6,13 @@ import banner2 from '../assets/images/carousel2.jpg';
 import banner3 from '../assets/images/carousel3.jpg';
 import banner4 from '../assets/images/carousel4.jpg';
 import CategoryCard from '../components/common/CategoryCard';
-import Tv from '../assets/images/tv.jpg';
-import Gadgets from '../assets/images/gadgets.jpg';
-import Texnika from '../assets/images/texnika.jpg';
 import ProductCard from '../components/common/ProductCard';
 import { Link } from 'react-router-dom';
 import { useProductStore } from '../hooks/useProductHooks';
-import products from '../data/products';
+import { products, categories } from '../data/products';
 
 function Home() {
   const { toggleLike, isLiked, toggleCartItem, isInCart } = useProductStore();
-
-  const categories = [
-    { id: 1, name: 'Televizorlar', image: Tv },
-    { id: 2, name: 'Iphone', image: Gadgets },
-    { id: 3, name: 'Audiotexnika va Wi-Fi', image: Texnika },
-    { id: 4, name: 'Kompyuterlar', image: Tv },
-    { id: 5, name: 'Telefonlar', image: Gadgets },
-    { id: 6, name: 'Smartfonlar', image: Texnika },
-    { id: 7, name: 'Smartwatchlar', image: Tv },
-    { id: 8, name: 'Texnika', image: Gadgets },
-    { id: 9, name: 'Oyin', image: Tv },
-    { id: 10, name: 'Avtomobil', image: Gadgets },
-  ];
-
-  
 
   // Har bir mahsulot uchun unik key
   const getProductKey = (product: any) => `${product.category}-${product.id}`;

@@ -40,4 +40,19 @@ const products = [
     { id: 30, category: 'Home Appliances', name: 'Philips Air Fryer', image: Texnika, monthprice: "550 000 so'm oyiga", oldprice: "8 000 000 so'm" },
 ];
 
-export default products;
+
+
+const categories = [
+    { id: 1, name: 'Televizorlar', image: Tv },
+    { id: 2, name: 'Iphone', image: Gadgets },
+    { id: 3, name: 'Audiotexnika va Wi-Fi', image: Texnika },
+    { id: 4, name: 'Kompyuterlar', image: Tv },
+    { id: 5, name: 'Telefonlar', image: Gadgets },
+    { id: 6, name: 'Smartfonlar', image: Texnika },
+    { id: 7, name: 'Smartwatchlar', image: Tv },
+    { id: 8, name: 'Texnika', image: Gadgets },
+    { id: 9, name: 'Oyin', image: Tv },
+    { id: 10, name: 'Avtomobil', image: Gadgets },
+  ];
+
+export { products, categories };
