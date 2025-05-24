@@ -112,6 +112,10 @@
                 font-weight: 500;
                 cursor: pointer;
                 transition: all 0.3s ease;
+                &:hover {
+                    background-color: var(--hover-color);
+                    border: 1px solid var(--tertiary-background-color);
+                }
             }
         }
     }

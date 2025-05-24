@@ -8,7 +8,7 @@ import { useProductStore } from '../../hooks/useProductHooks';
 const navs = [
     { to: '/', label: 'Bosh sahifa', icon: <FaHome /> },
     { to: '/catalog', label: 'Katalog', icon: <FaThList /> },
-    { to: '/cart', label: 'Savat', icon: <FaShoppingCart /> },
+    { to: '/basket', label: 'Savat', icon: <FaShoppingCart /> },
     { to: '/favorites', label: 'Sevimli', icon: <FaHeart /> },
     { to: '/profile', label: 'Profil', icon: <FaUser /> },
 ];
@@ -56,7 +56,7 @@ function Header() {
             >
               <span className='header__btn-icon'>{nav.icon}</span>
               <span>{nav.label}</span>
-              {nav.to === '/cart' && cartItems.length > 0 && (
+              {nav.to === '/basket' && cartItems.length > 0 && (
                 <span className="header__count">{cartItems.length}</span>
               )}
               {nav.to === '/favorites' && likedItems.length > 0 && (

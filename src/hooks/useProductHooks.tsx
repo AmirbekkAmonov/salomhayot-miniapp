@@ -2,12 +2,12 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 
 interface ProductState {
-  likedItems: number[];
-  cartItems: number[];
-  toggleLike: (id: number) => void;
-  toggleCartItem: (id: number) => void;
-  isLiked: (id: number) => boolean;
-  isInCart: (id: number) => boolean;
+  likedItems: string[];
+  cartItems: string[];
+  toggleLike: (key: string) => void;
+  toggleCartItem: (key: string) => void;
+  isLiked: (key: string) => boolean;
+  isInCart: (key: string) => boolean;
 }
 
 export const useProductStore = create<ProductState>()(
@@ -16,30 +16,31 @@ export const useProductStore = create<ProductState>()(
       likedItems: [],
       cartItems: [],
 
-      toggleLike: (id: number) => {
+      toggleLike: (key: string) => {
         set(state => {
           const likedItems = state.likedItems;
-          if (likedItems.includes(id)) {
-            return { likedItems: likedItems.filter(itemId => itemId !== id) };
+          if (likedItems.includes(key)) {
+            return { likedItems: likedItems.filter(itemKey => itemKey !== key) };
           } else {
-            return { likedItems: [...likedItems, id] };
+            return { likedItems: [...likedItems, key] };
           }
         });
       },
+      
 
-      toggleCartItem: (id: number) => {
+      toggleCartItem: (key: string) => {
         set(state => {
           const cartItems = state.cartItems;
-          if (cartItems.includes(id)) {
-            return { cartItems: cartItems.filter(itemId => itemId !== id) };
+          if (cartItems.includes(key)) {
+            return { cartItems: cartItems.filter(itemKey => itemKey !== key) };
           } else {
-            return { cartItems: [...cartItems, id] };
+            return { cartItems: [...cartItems, key] };
           }
         });
       },
 
-      isLiked: (id: number) => get().likedItems.includes(id),
-      isInCart: (id: number) => get().cartItems.includes(id),
+      isLiked: (key: string) => get().likedItems.includes(key),
+      isInCart: (key: string) => get().cartItems.includes(key),
     }),
     {
       name: 'product-storage', // localStorage key nomi
