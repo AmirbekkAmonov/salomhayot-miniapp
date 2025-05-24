@@ -1,6 +1,6 @@
 import { useProductStore } from '../hooks/useProductHooks';
 import ProductCard from '../components/common/ProductCard';
-import products from '../data/products';
+import { products } from '../data/products';
 import { DropboxOutlined  } from '@ant-design/icons';
 import { useEffect } from 'react';
 function Favorites() {

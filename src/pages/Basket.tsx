@@ -6,7 +6,7 @@ import {
   HeartFilled,
 } from '@ant-design/icons';
 import { useEffect, useState } from 'react';
-import products from '../data/products';
+import { products } from '../data/products';
 
 function Basket() {
   const { cartItems, toggleCartItem, toggleLike, isLiked } = useProductStore();

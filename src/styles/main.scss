@@ -9,6 +9,7 @@
 
 // Components   // ui
 @import './components/ui/loader';
+@import './components/ui/imageZoomModal';
 
 // Components   // common
 @import './components/common/productCard';
@@ -19,3 +20,4 @@
 @import './pages/catalog';
 @import './pages/favorites';
 @import './pages/basket';
+@import './pages/productDetail';
